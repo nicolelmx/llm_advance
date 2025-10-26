@@ -1,0 +1,8 @@
+week7_homework:
+学习目标：基于课堂教学内容，提供系统性的BERT和GPT的对比分析
+作业要求（包含但不限于）：
+1. 加载BERT与GPT模型
+2. 架构对比分析
+3. 各自具体功能演示等
+
+Tips：可以查看学习示例代码-“bert_gpt_comparison.py”

@@ -1,0 +1,183 @@
+{
+  "batch_info": {
+    "total_images": 5,
+    "successful_images": 5,
+    "processing_timestamp": "2025-10-26T16:10:05.834547",
+    "input_folder": "pictures",
+    "output_folder": "output_pictures"
+  },
+  "engine_statistics": {
+    "tesseract": {
+      "total_attempts": 5,
+      "successful_attempts": 5,
+      "success_rate": "100.0%"
+    },
+    "opencv_simple": {
+      "total_attempts": 5,
+      "successful_attempts": 5,
+      "success_rate": "100.0%"
+    }
+  },
+  "detailed_results": [
+    {
+      "image_path": "pictures\\chinese_text_step1.jpg",
+      "image_name": "chinese_text_step1.jpg",
+      "processing_time": 3.2998955249786377,
+      "timestamp": "2025-10-26T16:09:54.457958",
+      "ocr_results": {
+        "tesseract": {
+          "engine": "Tesseract",
+          "text": "人 工 智 能 技 术 发 展 迅 速\n机 器 学 习 是 核 心 技 术\n0CR 识 别 准 确 率 不 断 提 升",
+          "confidence": 94.48571428571428,
+          "success": true
+        },
+        "opencv_simple": {
+          "engine": "OpenCV简单检测",
+          "text": "检测到 1 个文字区域",
+          "regions": [
+            {
+              "id": 0,
+              "bbox": [
+                0,
+                0,
+                400,
+                300
+              ],
+              "area": 119301.0,
+              "aspect_ratio": 1.3333333333333333
+            }
+          ],
+          "success": true
+        }
+      }
+    },
+    {
+      "image_path": "pictures\\visualization_test_chinese.png",
+      "image_name": "visualization_test_chinese.png",
+      "processing_time": 3.421190023422241,
+      "timestamp": "2025-10-26T16:09:57.883653",
+      "ocr_results": {
+        "tesseract": {
+          "engine": "Tesseract",
+          "text": "测 试 文 字",
+          "confidence": 95.5,
+          "success": true
+        },
+        "opencv_simple": {
+          "engine": "OpenCV简单检测",
+          "text": "检测到 1 个文字区域",
+          "regions": [
+            {
+              "id": 0,
+              "bbox": [
+                2,
+                2,
+                398,
+                198
+              ],
+              "area": 77047.5,
+              "aspect_ratio": 2.01010101010101
+            }
+          ],
+          "success": true
+        }
+      }
+    },
+    {
+      "image_path": "pictures\\visualization_test_english.png",
+      "image_name": "visualization_test_english.png",
+      "processing_time": 2.6514534950256348,
+      "timestamp": "2025-10-26T16:10:00.538179",
+      "ocr_results": {
+        "tesseract": {
+          "engine": "Tesseract",
+          "text": "Hello World",
+          "confidence": 95.16666666666667,
+          "success": true
+        },
+        "opencv_simple": {
+          "engine": "OpenCV简单检测",
+          "text": "检测到 1 个文字区域",
+          "regions": [
+            {
+              "id": 0,
+              "bbox": [
+                2,
+                2,
+                398,
+                198
+              ],
+              "area": 77047.5,
+              "aspect_ratio": 2.01010101010101
+            }
+          ],
+          "success": true
+        }
+      }
+    },
+    {
+      "image_path": "pictures\\visualization_test_mixed.png",
+      "image_name": "visualization_test_mixed.png",
+      "processing_time": 2.6305091381073,
+      "timestamp": "2025-10-26T16:10:03.171691",
+      "ocr_results": {
+        "tesseract": {
+          "engine": "Tesseract",
+          "text": "中 英 混 合 Mixed",
+          "confidence": 95.11111111111111,
+          "success": true
+        },
+        "opencv_simple": {
+          "engine": "OpenCV简单检测",
+          "text": "检测到 1 个文字区域",
+          "regions": [
+            {
+              "id": 0,
+              "bbox": [
+                2,
+                2,
+                398,
+                198
+              ],
+              "area": 77047.5,
+              "aspect_ratio": 2.01010101010101
+            }
+          ],
+          "success": true
+        }
+      }
+    },
+    {
+      "image_path": "pictures\\visualization_test_numbers.png",
+      "image_name": "visualization_test_numbers.png",
+      "processing_time": 2.657456159591675,
+      "timestamp": "2025-10-26T16:10:05.832770",
+      "ocr_results": {
+        "tesseract": {
+          "engine": "Tesseract",
+          "text": "1234567890",
+          "confidence": 95.2,
+          "success": true
+        },
+        "opencv_simple": {
+          "engine": "OpenCV简单检测",
+          "text": "检测到 1 个文字区域",
+          "regions": [
+            {
+              "id": 0,
+              "bbox": [
+                2,
+                2,
+                398,
+                198
+              ],
+              "area": 77047.5,
+              "aspect_ratio": 2.01010101010101
+            }
+          ],
+          "success": true
+        }
+      }
+    }
+  ]
+}

@@ -4,3 +4,9 @@
 *.ptx
 *.cubin
 *.fatbin
+*.bin
+*.npy
+*.txt
+*.pt
+*.pth
+checkpoint-*

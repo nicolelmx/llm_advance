@@ -1,0 +1,32 @@
+{
+  "image_path": "pictures\\visualization_test_numbers.png",
+  "image_name": "visualization_test_numbers.png",
+  "processing_time": 2.657456159591675,
+  "timestamp": "2025-10-26T16:10:05.832770",
+  "ocr_results": {
+    "tesseract": {
+      "engine": "Tesseract",
+      "text": "1234567890",
+      "confidence": 95.2,
+      "success": true
+    },
+    "opencv_simple": {
+      "engine": "OpenCV简单检测",
+      "text": "检测到 1 个文字区域",
+      "regions": [
+        {
+          "id": 0,
+          "bbox": [
+            2,
+            2,
+            398,
+            198
+          ],
+          "area": 77047.5,
+          "aspect_ratio": 2.01010101010101
+        }
+      ],
+      "success": true
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "我的iPhone 15订单ORD123456什么时候能到北京？",
+      "entities": [
+        {
+          "text": "iPhone 15",
+          "label": "PRODUCT",
+          "start": 2,
+          "end": 11
+        },
+        {
+          "text": "ORD123456",
+          "label": "ORDER",
+          "start": 13,
+          "end": 22
+        },
+        {
+          "text": "北京",
+          "label": "LOCATION",
+          "start": 28,
+          "end": 30
+        }
+      ]
+    },{
+      "id": 1,
+      "text": "我的iPhone 15订单ORD123456什么时候能到北京？",
+      "entities": [
+        {
+          "text": "iPhone 15",
+          "label": "PRODUCT",
+          "start": 2,
+          "end": 11
+        },
+        {
+          "text": "ORD123456",
+          "label": "ORDER",
+          "start": 13,
+          "end": 22
+        },
+        {
+          "text": "北京",
+          "label": "LOCATION",
+          "start": 28,
+          "end": 30
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "id": 1,
+      "question": "订单什么时候能到？",
+      "answer": "订单一般3-5个工作日送达，具体时间请查看物流信息。"
+    },
+    {
+      "id": 1,
+      "question": "订单什么时候能到？",
+      "answer": "订单一般3-5个工作日送达，具体时间请查看物流信息。"
+    }
+  ]
+}
