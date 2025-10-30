@@ -1,15 +1,9 @@
 {
-  "image_path": "pictures\\visualization_test_mixed.png",
+  "image_path": "pictures/visualization_test_mixed.png",
   "image_name": "visualization_test_mixed.png",
-  "processing_time": 2.6305091381073,
-  "timestamp": "2025-10-26T16:10:03.171691",
+  "processing_time": 0.001055002212524414,
+  "timestamp": "2025-10-26T22:20:39.774766",
   "ocr_results": {
-    "tesseract": {
-      "engine": "Tesseract",
-      "text": "中 英 混 合 Mixed",
-      "confidence": 95.11111111111111,
-      "success": true
-    },
     "opencv_simple": {
       "engine": "OpenCV简单检测",
       "text": "检测到 1 个文字区域",

@@ -1,0 +1,52 @@
+[
+  {
+    "question": "我最近经常头痛，伴有恶心，这是什么原因？",
+    "scenario": "diagnosis",
+    "max_tokens": 512
+  },
+  {
+    "question": "高血压患者应该如何控制血压？",
+    "scenario": "treatment",
+    "max_tokens": 512
+  },
+  {
+    "question": "如何预防心血管疾病？",
+    "scenario": "prevention",
+    "max_tokens": 512
+  },
+  {
+    "question": "什么是高血压？",
+    "scenario": "education",
+    "max_tokens": 512
+  },
+  {
+    "question": "胸痛持续了3天，呼吸时加重，需要立即就医吗？",
+    "scenario": "emergency",
+    "max_tokens": 512
+  },
+  {
+    "question": "糖尿病患者应该如何安排饮食？",
+    "scenario": "nutrition",
+    "max_tokens": 512
+  },
+  {
+    "question": "最近工作压力大，经常失眠，有什么建议吗？",
+    "scenario": "mental_health",
+    "max_tokens": 512
+  },
+  {
+    "question": "3岁孩子发烧38.5度，应该怎么处理？",
+    "scenario": "pediatric",
+    "max_tokens": 512
+  },
+  {
+    "question": "老年人如何预防跌倒？",
+    "scenario": "geriatric",
+    "max_tokens": 512
+  },
+  {
+    "question": "备孕期间需要注意什么？",
+    "scenario": "women_health",
+    "max_tokens": 512
+  }
+]

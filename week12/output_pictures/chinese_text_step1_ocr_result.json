@@ -1,15 +1,9 @@
 {
-  "image_path": "pictures\\chinese_text_step1.jpg",
+  "image_path": "pictures/chinese_text_step1.jpg",
   "image_name": "chinese_text_step1.jpg",
-  "processing_time": 3.2998955249786377,
-  "timestamp": "2025-10-26T16:09:54.457958",
+  "processing_time": 0.010907888412475586,
+  "timestamp": "2025-10-26T22:20:39.764930",
   "ocr_results": {
-    "tesseract": {
-      "engine": "Tesseract",
-      "text": "人 工 智 能 技 术 发 展 迅 速\n机 器 学 习 是 核 心 技 术\n0CR 识 别 准 确 率 不 断 提 升",
-      "confidence": 94.48571428571428,
-      "success": true
-    },
     "opencv_simple": {
       "engine": "OpenCV简单检测",
       "text": "检测到 1 个文字区域",
