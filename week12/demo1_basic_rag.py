@@ -114,7 +114,7 @@ class SimpleRAGDemo:
 
         print(f"🔍 搜索查询: '{query}'")
 
-        # 预处理查询
+        # 预处理查询 分词后的查询
         processed_query = self.preprocess_text(query)
 
         # 将查询转换为向量

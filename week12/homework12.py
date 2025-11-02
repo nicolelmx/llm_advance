@@ -15,16 +15,15 @@ from typing import List, Tuple, Counter
 
 class RAGTranslator:
     """RAG翻译器 - 基于检索增强生成的翻译系统"""
+    STOP_WORDS = {'的', '了', '在', '是', '我', '有', '和', '就', '不', '人', '都', '一', '一个', '上', '也',
+                  '很', '到', '说', '要', '去', '你', '会', '着', '没有', '看', '好', '自己', '这', 'the', 'a',
+                  'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by'}
 
     def __init__(self):
         self.vocabulary = {}
-        self.stop_words = {'的', '了', '在', '是', '我', '有', '和', '就', '不', '人', '都', '一', '一个', '上', '也',
-                           '很', '到', '说', '要', '去', '你', '会', '着', '没有', '看', '好', '自己', '这', 'the', 'a',
-                           'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by'}
-        self.documents = []
-        self.vectors = []
-        self.metadata = []
-        self.translations = {}
+        self.vectors = []  # 与docs一一对应
+        self.metadata = []  # 与docs一一对应
+        self.translations = {}  # 与docs一一对应
     
     def preprocess_text(self, text: str) -> List[str]:
         """文本预处理"""
@@ -33,7 +32,7 @@ class RAGTranslator:
         # 分词
         words = text.split()
         # 移除停用词
-        words = [word for word in words if word not in self.stop_words and len(word) > 1]
+        words = [word for word in words if word not in self.STOP_WORDS and len(word) > 1]
         return words
 
     def get_documents_vectors(self, documents: List[str]) -> list:
@@ -83,10 +82,10 @@ class RAGTranslator:
     def train(self, parallel_corpus: List[Tuple[str, str]]):
         source_docs = [pair[0] for pair in parallel_corpus]
         target_docs = [pair[1] for pair in parallel_corpus]
-        self.documents = source_docs + target_docs
+        documents = source_docs + target_docs
 
         word_count = Counter()
-        for doc in self.documents:
+        for doc in documents:
             words = self.preprocess_text(doc)
             word_count.update(words)
 
@@ -94,10 +93,10 @@ class RAGTranslator:
         self.vocabulary = {word: idx for idx, (word, count) in enumerate(word_count.most_common()) if count >= 1}
 
         # 计算文档向量
-        vectors = self.get_documents_vectors(self.documents)
+        vectors = self.get_documents_vectors(documents)
         self.vectors.extend(vectors)
         # 默认元数据
-        for i, doc in enumerate(self.documents):
+        for i, doc in enumerate(documents):
             self.metadata.append({
                 'id': i,
                 'language': 'chinese' if doc in source_docs else 'english',
@@ -105,10 +104,11 @@ class RAGTranslator:
                 'word_count': len(doc.split())
             })
         # 构建翻译记忆库 添加翻译对
-        self.translations = {'chinese_english': {}, 'english_chinese': {}}
         for source_doc, target_doc in parallel_corpus:
-            self.translations['chinese_english'][source_doc] = target_doc
-            self.translations['english_chinese'][target_doc] = source_doc
+            cn_en_dict = self.translations.setdefault('chinese_english', {})
+            cn_en_dict[source_doc] = target_doc
+            en_cn_dict = self.translations.setdefault('english_chinese', {})
+            en_cn_dict[target_doc] = source_doc
 
     def translate(self, text: str, source_lang: str = 'chinese', target_lang: str = 'english') -> str:
         # 1. 检查翻译记忆库
@@ -141,17 +141,17 @@ class RAGTranslator:
                 # 计算余弦相似度
                 similarity = self.cosine_similarity(query_vector, doc_vector)
                 if self.metadata[i]['language'] == source_lang:
-                    similarities.append((self.documents[i], similarity, self.metadata[i]))
+                    similarities.append((i, similarity))
             # 按相似度排序
             similarities.sort(key=lambda x: x[1], reverse=True)
             relevant_docs = similarities[:3]
 
             # 找到对应的英文翻译
-            for doc, similarity, metadata in relevant_docs:
+            for doc_idx, similarity in relevant_docs:
                 # 查找对应的英文翻译
-                if doc in self.translations.get(lang_key):
-                    target = self.translations[lang_key][doc]
-                    return f"[RAG翻译] {target}"
+                target_docs = list(self.translations.get(lang_key).values())
+                target = target_docs[doc_idx]
+                return f"[RAG翻译] {target}"
 
         return "[无匹配翻译] 未找到合适的翻译"
 
