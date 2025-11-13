@@ -5,6 +5,7 @@
 
 from __future__ import annotations
 
+import traceback
 from typing import List
 
 from langchain.tools import Tool
@@ -194,7 +195,7 @@ def build_agent() -> AgentExecutor:
     try:
         ChatOpenAI.model_rebuild(force=True)
     except Exception:
-        pass
+        print(f'model_rebuild failed, {traceback.format_exc()}')
     
     cfg = load_config()
 
