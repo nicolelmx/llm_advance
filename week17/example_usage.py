@@ -85,8 +85,11 @@ def example_module_detailed():
 
 if __name__ == "__main__":
     # 运行所有示例
+    # 任务型对话系统示例
     example_task_oriented()
+    # LLM闲聊系统示例
     example_llm_chat()
+
     example_module_detailed()
     
     print("\n" + "=" * 60)
