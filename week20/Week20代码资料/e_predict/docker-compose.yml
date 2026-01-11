@@ -1,0 +1,20 @@
+services:
+  xgboost-train:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: xgboost-predict
+    volumes:
+      # 挂载整个项目目录（包含所有数据文件）
+      - .:/app
+      # 注意：由于Docker volumes不支持通配符，我们挂载整个目录
+      # 数据文件应该放在项目根目录下，脚本会自动查找
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DOCKER_ENV=1
+    # 默认命令（可以通过docker-compose run覆盖）
+    command: python XGBoost2pre.py --help
+    # 如果需要交互式运行，取消下面的注释
+    # stdin_open: true
+    # tty: true
+

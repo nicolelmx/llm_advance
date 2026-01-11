@@ -1,0 +1,8 @@
+python环境手动获取：
+docker pull python:3.10-slim
+
+构建docker运行环境（把容器搭起来）：
+docker-compse build
+
+在docker环境中执行代码：
+docker-compose run --rm xgboost-train python XGBoost2pre.py --normalize
