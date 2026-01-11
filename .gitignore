@@ -8,5 +8,7 @@
 *.npy
 *.pt
 *.pth
+*.parquet
+*.csv
 checkpoint-*
 output_*

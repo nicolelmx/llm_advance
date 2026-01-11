@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+predictions.parquet
+*.log
+
+# Documentation (not needed in container)
+*.md
+docs/
+
+# Data (only processed data is needed)
+data/creditcard.csv
+
+# Models (will be copied separately if needed)
+# models/ is included in Dockerfile
+

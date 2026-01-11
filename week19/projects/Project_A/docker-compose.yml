@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  risk-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: risk-api:latest
+    container_name: risk-api-container
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    # 如果需要挂载数据目录（可选）
+    # volumes:
+    #   - ./models:/app/models
+    #   - ./data/processed:/app/data/processed
+
